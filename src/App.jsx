@@ -12,14 +12,18 @@ function App() {
   return (
     <LaunchProvider>
       <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" replace />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/browse-launches" element={<Launches />} />
-          <Route path="/about-us" element={<About />} /> 
-        </Routes>
-        <Footer />
+        <div className="w-full min-h-screen flex flex-col bg-black text-white">
+          <Navbar />
+          <main className="flex-1 w-full">
+            <Routes>
+              <Route path="/" element={<Navigate to="/home" replace />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/browse-launches" element={<Launches />} />
+              <Route path="/about-us" element={<About />} /> 
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </Router>
     </LaunchProvider>
   );
