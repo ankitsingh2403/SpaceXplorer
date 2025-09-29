@@ -1,215 +1,169 @@
-SpaceXplorer 🌌
+## SpaceXplorer
 
-SpaceXplorer is a modern, interactive web application built with React and Vite, designed to explore, track, and visualize SpaceX launches. The website provides real-time launch data, interactive details about rockets, and information about SpaceX achievements.
+SpaceXplorer is a dynamic web application built with React and Vite, offering users an interactive platform to explore SpaceX's launches, missions, and related data. Whether you're a space enthusiast or a developer, SpaceXplorer provides an engaging interface to delve into the cosmos.
+## Demo
 
-The website uses galaxy-themed animations and gradients to give users an immersive space experience.
+🌐 Live Demo
 
-Table of Contents
+Experience SpaceXplorer in action:
 
-Demo
+👉 https://your-live-demo-url.com
+## 🛠️ Features
 
-Features
+- Interactive Launch Timeline: Visualize past and upcoming SpaceX  launches.
 
-Tech Stack
+- Mission Details: Access comprehensive information about each mission.
 
-Installation
+- Real-Time Updates: Stay informed with the latest launch data.
 
-Project Structure
+- Responsive Design: Enjoy a seamless experience across devices.
 
-Components
+## ⚙️ Tech Stack
 
-API
+- Frontend: React 18, Vite
 
-Usage
+- Styling: Tailwind CSS
 
-Testing
+- Routing: React Router DOM
 
-Contributing
+- State Management: React Context API
 
-License
+- Testing: Vitest, React Testing Library
 
-Demo
+- API: SpaceX Public API
 
-Add your live demo link here:
+## Installation
 
-https://your-website-demo.com
+Clone the repository:
 
-Features
+```bash
+ git clone https://github.com/ankitsingh2403/SpaceXplorer.git
+ cd SpaceXplorer
+```
 
-Home Page with hero section and galaxy background animations
+Install dependencies:
 
-Browse Launches Page displaying SpaceX launches with search and filter functionality
+```bash
+ npm install
 
-About Page describing vision, goals, and achievements
+```
+Run the development server:
 
-Contact Form integrated with UI for user messages
+```bash
+npm run dev 
+```
 
-Favorites feature for launches with persistence using localStorage
 
-Galaxy-themed Animations consistent across all pages
+    
+## Running Tests
 
-Responsive Design for all device sizes
+To run tests, run the following command
 
-Tech Stack
+```bash
+  npm run test
+```
 
-Frontend: React 18, Vite, Tailwind CSS, React Router DOM
 
-Icons: React Icons (FontAwesome)
+## Deployment
 
-Animations: Tailwind CSS + Custom Keyframes
+Deploying SpaceXplorer to Vercel is quick and easy:
 
-State Management: React Context API
+1. Push Code to GitHub
+Make sure your project is pushed to a GitHub repository:
 
-Testing: React Testing Library + Vitest
+```bash
+ git add .
+ git commit -m "Initial commit"
+ git push origin main
+```
 
-API: SpaceX REST API
+2. Go to Vercel
+- Visit https://vercel.com and log in (or sign up).
 
-Installation
+3. Import GitHub Repo
 
-Clone the repository
+- Click "New Project".
 
-git clone https://github.com/ankitsingh2403/SpaceXplorer.git
-cd space-explorer
+- Select your SpaceXplorer repository.
 
+- Vercel will auto-detect Vite + React.
 
-Install dependencies
+4. Set Build Settings (if not auto-detected):
 
-npm install
+- Framework Preset: Vite
 
+- Build Command: npm run build
 
-Run the development server
+- Output Directory: dist
 
-npm run dev
+5. Deploy 🚀
+- Click Deploy and wait for the build to finish.
+  Your app will be live at:
+```bash
+https://your-project-name.vercel.app
 
+```
 
-Build for production
+6. Optional - Custom Domain
 
-npm run build
+- Go to your project in Vercel.
 
+- Add a custom domain under the Domains tab.
 
-Preview production build
 
-npm run preview
+## API Reference
 
-Project Structure
-space-explorer/
-│
-├─ public/                 # Static files
-├─ src/
-│  ├─ assets/              # Images, logos
-│  ├─ components/          # Reusable components like Navbar, Footer, Hero
-│  ├─ context/             # Context API providers
-│  ├─ pages/               # Home, About, BrowseLaunches
-│  ├─ App.jsx              # Main App with Router
-│  ├─ main.jsx             # Entry point
-│  └─ index.css            # Tailwind and global styles
-├─ package.json
-├─ vite.config.js
-└─ README.md
+#### Get all items
 
-Components
-Navbar
+```http
+    GET /launches
 
-Fixed top navigation bar with links to Home, Browse Launches, About
+```
 
-Responsive with hover gradient effects
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `None` | `-` |  Returns all launches |
 
-Hero
+#### Get item
 
-Full-screen hero section with galaxy background
+```http
+    GET /launches/latest
 
-Animated text and “Explore Now” button linked to Browse Launches
+```
 
-About
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `None`      | `-` | Returns all upcoming launches |
 
-Galaxy-themed cards describing story, vision, goals, achievements
 
-Animated counters for achievements
+```http
+      GET /rockets/${id}
 
-Contact form at the bottom
+```
 
-BrowseLaunches
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `String` | **Required** ID of rocket to fetch|
 
-Fetches SpaceX launches from API
 
-Search and filter by name/date/rocket
+## Authors
 
-Favorite launches toggle with persistence in localStorage
+- [@ankitsingh2403](https://github.com/ankitsingh2403/SpaceXplorer)
 
-Detail view for individual launches
 
-Footer
+## Badges
 
-Social media icons (Twitter, Instagram, Github, LinkedIn)
+Add badges from somewhere like: [shields.io](https://shields.io/)
 
-Galaxy glow background
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+[![AGPL License](https://img.shields.io/badge/license-AGPL-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
 
-Copyright
 
-API
+![Logo](https://png.pngtree.com/png-vector/20220606/ourmid/pngtree-space-explorer-icon-telecommunication-satellite-png-image_4870567.png)
 
-SpaceX API (R-Spacex API
-)
 
-Endpoint used:
+## License
 
-https://api.spacexdata.com/v4/launches – Get all launches
+[MIT](https://choosealicense.com/licenses/mit/)
 
-https://api.spacexdata.com/v4/rockets – Get rocket details
-
-Fetching Example:
-
-import { useEffect, useState } from "react";
-import axios from "axios";
-
-const [launches, setLaunches] = useState([]);
-
-useEffect(() => {
-  axios.get("https://api.spacexdata.com/v4/launches")
-    .then((res) => setLaunches(res.data))
-    .catch((err) => console.error(err));
-}, []);
-
-Usage
-
-Navigate to /home to see the hero section
-
-Click Explore Now to go to /browse-launches
-
-Filter and search launches by name or rocket
-
-Toggle favorites to save your preferred launches
-
-View individual launch details
-
-Explore About page for SpaceXplorer’s story, vision, and achievements
-
-Contact us through the form on About page
-
-Testing
-
-React Testing Library + Vitest
-
-Example tests:
-
-Rendering and filtering the launches list
-
-Favorite toggle and persistence in localStorage
-
-Detail view rendering
-
-Run tests:
-
-npm run test
-
-Contributing
-
-Fork the repository
-
-Create your feature branch: git checkout -b feature/YourFeature
-
-Commit your changes: git commit -m "Add YourFeature"
-
-Push to the branch: git push origin feature/YourFeature
-
-Open a Pull Request
