@@ -4,7 +4,7 @@ import BrowseLaunches from "../components/BrowseLaunches";
 
 const Launches = () => {
   return (
-    <div className="bg-black text-white min-h-screen w-full flex flex-col">
+    <div className="bg-black text-white min-h-screen">
       <BrowseHero />
       <BrowseLaunches />
     </div>

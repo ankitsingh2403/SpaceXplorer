@@ -4,7 +4,7 @@ import SpaceXInfoGalaxy1 from "../components/SpaceXInfoGalaxy";
 
 const Home = () => {
   return (
-    <div className="bg-black text-white min-h-screen w-full flex flex-col">
+    <div className="bg-black text-white min-h-screen">
       {/* Hero Section */}
       <Hero />
 
