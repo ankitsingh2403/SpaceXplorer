@@ -7,7 +7,7 @@ SpaceXplorer is a dynamic web application built with React and Vite, offering us
 
 Experience SpaceXplorer in action:
 
-👉 https://your-live-demo-url.com
+👉 https://spacexplorer-as.vercel.app/
 ## 🛠️ Features
 
 - Interactive Launch Timeline: Visualize past and upcoming SpaceX  launches.
@@ -100,7 +100,7 @@ Make sure your project is pushed to a GitHub repository:
 - Click Deploy and wait for the build to finish.
   Your app will be live at:
 ```bash
-https://your-project-name.vercel.app
+https://spacexplorer-as.vercel.app/
 
 ```
 
