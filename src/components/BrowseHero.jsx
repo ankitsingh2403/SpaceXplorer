@@ -4,7 +4,7 @@ import cardBack from "../assets/launch-back.jpg";
 
 export default function BrowseHero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-between px-16">
+    <section className="relative w-full min-h-screen overflow-hidden bg-black flex flex-col md:flex-row items-center justify-between px-4 sm:px-8 md:px-16 py-8 md:py-0">
 
       {/* Galaxy & Stars Background */}
       <div className="absolute inset-0 z-0">
@@ -35,24 +35,21 @@ export default function BrowseHero() {
       </div>
 
       {/* Left Content */}
-      <div className="relative z-20 max-w-xl space-y-6 text-white">
-        <h1 className="text-6xl md:text-7xl font-extrabold leading-tight tracking-tight">
+      <div className="relative z-20 max-w-xl w-full space-y-4 sm:space-y-6 text-white flex flex-col items-start md:items-start md:justify-center py-4 md:py-0">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
           Explore <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-pulse">SpaceX Launches</span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-300">
+        <p className="text-base sm:text-lg md:text-xl text-gray-300">
           Dive into the world of SpaceX missions and discover the history, rockets, and success stories behind each launch. 🚀
         </p>
-        {/* <button className="px-8 py-4 bg-white text-black font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition transform hover:scale-105">
-          Browse Launches
-        </button> */}
-         <p className="text-lg md:text-xl text-gray-300">
+        <p className="text-base sm:text-lg md:text-xl text-gray-300">
           Reaching for the stars, one launch at a time – because every mission begins with a dream.
         </p>
       </div>
 
       {/* Right Side - Swinging Card */}
-      <div className="relative flex flex-col items-center justify-center h-full z-20 mr-32">
-        <div className="swing-wrapper relative flex flex-col items-center w-72 perspective">
+      <div className="relative flex flex-col items-center justify-center h-auto md:h-full z-20 md:mr-32 mt-8 md:mt-0 w-full md:w-auto">
+        <div className="swing-wrapper relative flex flex-col items-center w-64 sm:w-72 perspective">
           {/* Ribbon */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-64 z-10 flex flex-col items-center">
             <div className="relative w-full h-6">
@@ -65,20 +62,20 @@ export default function BrowseHero() {
           </div>
 
           {/* Card */}
-          <div className="relative top-16 card-container w-full h-[22rem] transform-style cursor-pointer">
+          <div className="relative top-12 sm:top-16 card-container w-full h-[18rem] sm:h-[22rem] transform-style cursor-pointer">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-4 bg-black rounded-sm z-30 shadow-inner"></div>
 
             <div className="card-inner w-full h-full absolute transform-style transition-transform duration-700 hover:rotate-y-180">
               {/* Front */}
               <div className="absolute inset-0 backface-hidden rounded-xl shadow-2xl overflow-hidden">
-                <img src={cardFront} alt="Launch Front" className="w-full h-full object-cover" />
+                <img src={cardFront} alt="Launch Front" className="w-full h-full object-cover" draggable="false" />
                 <div className="absolute bottom-4 left-0 w-full text-center text-black font-bold text-2xl">
                   Latest Launch
                 </div>
               </div>
               {/* Back */}
               <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-xl shadow-2xl overflow-hidden">
-                <img src={cardBack} alt="Launch Back" className="w-full h-full object-cover" />
+                <img src={cardBack} alt="Launch Back" className="w-full h-full object-cover" draggable="false" />
                 <div className="absolute bottom-4 left-0 w-full text-center text-black font-bold text-2xl">
                   SpaceX Explorer
                 </div>
@@ -97,6 +94,12 @@ export default function BrowseHero() {
         .rotate-y-180 { transform: rotateY(180deg); }
         .transition-transform { transition: transform 0.7s; }
 
+        @media (max-width: 768px) {
+          .md\:flex-row { flex-direction: column !important; }
+          .md\:mr-32 { margin-right: 0 !important; }
+          .md\:items-start { align-items: center !important; }
+          .md\:py-0 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+        }
         @keyframes swing { 0%,100% { transform: rotateZ(-12deg); } 50% { transform: rotateZ(12deg); } }
         @keyframes galaxyMove { 0% { transform: scale(1) translate(0,0); } 100% { transform: scale(1.2) translate(-40px,40px); } }
         .animate-galaxy { animation: galaxyMove 40s infinite alternate ease-in-out; }

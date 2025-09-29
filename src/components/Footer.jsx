@@ -19,7 +19,7 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-t from-purple-900 via-black to-purple-800 text-white pt-16 pb-12 overflow-hidden">
+    <footer className="relative bg-gradient-to-t from-purple-900 via-black to-purple-800 text-white pt-10 sm:pt-16 pb-8 sm:pb-12 overflow-hidden">
       {/* Galaxy Glow & Shooting Stars */}
       <div className="absolute inset-0 -z-10">
         <div className="stars stars1"></div>
@@ -29,21 +29,21 @@ export default function Footer() {
         <div className="shooting-star shooting-star2"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-12 relative z-10">
+  <div className="max-w-7xl mx-auto px-2 sm:px-6 md:px-16 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-12 relative z-10">
         {/* Logo & About */}
-        <div className="flex flex-col gap-4">
-          <img src={logo} alt="SpaceXplorer Logo" className="w-28 md:w-36" />
-          <p className="text-gray-300 max-w-xs">
+        <div className="flex flex-col gap-2 sm:gap-4 items-center md:items-start text-center md:text-left">
+          <img src={logo} alt="SpaceXplorer Logo" className="w-20 sm:w-28 md:w-36 mx-auto md:mx-0" />
+          <p className="text-gray-300 max-w-xs text-sm sm:text-base">
             SpaceXplorer: Discover every mission, rocket, and milestone in the SpaceX universe.
           </p>
         </div>
 
         {/* Quick Stats / Fun Facts */}
-        <div className="flex flex-col gap-3">
-          <h3 className="text-xl font-bold mb-2 relative after:absolute after:left-0 after:bottom-0 after:w-16 after:h-1 after:bg-pink-500 after:rounded-full after:shadow-pink-500/50 after:animate-glow-underline">
+        <div className="flex flex-col gap-2 sm:gap-3 items-center md:items-start text-center md:text-left">
+          <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 relative after:absolute after:left-0 after:bottom-0 after:w-12 sm:after:w-16 after:h-1 after:bg-pink-500 after:rounded-full after:shadow-pink-500/50 after:animate-glow-underline">
             Quick Stats
           </h3>
-          <ul className="text-gray-300 space-y-2">
+          <ul className="text-gray-300 space-y-1 sm:space-y-2 text-sm sm:text-base">
             {stats.map((s, idx) => (
               <li
                 key={idx}
@@ -57,42 +57,42 @@ export default function Footer() {
         </div>
 
         {/* Newsletter & Social */}
-        <div className="flex flex-col gap-4">
-          <h3 className="text-xl font-bold mb-2 relative after:absolute after:left-0 after:bottom-0 after:w-16 after:h-1 after:bg-blue-400 after:rounded-full after:shadow-blue-400/50 after:animate-glow-underline">
+        <div className="flex flex-col gap-2 sm:gap-4 items-center md:items-start text-center md:text-left">
+          <h3 className="text-lg sm:text-xl font-bold mb-1 sm:mb-2 relative after:absolute after:left-0 after:bottom-0 after:w-12 sm:after:w-16 after:h-1 after:bg-blue-400 after:rounded-full after:shadow-blue-400/50 after:animate-glow-underline">
             Stay Connected
           </h3>
-          <p className="text-gray-300">Subscribe to our newsletter for updates on new launches and space news.</p>
-          <form onSubmit={handleSubscribe} className="flex gap-2">
+          <p className="text-gray-300 text-sm sm:text-base">Subscribe to our newsletter for updates on new launches and space news.</p>
+          <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 w-full">
             <input
               type="email"
               placeholder="Your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="px-4 py-2 rounded-l-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-blue-500 flex-1"
+              className="px-3 py-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:outline-none focus:border-blue-500 flex-1 text-sm sm:text-base"
             />
-            <button className="px-4 py-2 bg-blue-600 hover:bg-blue-500 rounded-r-lg transition font-semibold">
+            <button className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 hover:bg-blue-500 rounded-lg transition font-semibold text-sm sm:text-base">
               Subscribe
             </button>
           </form>
-          <div className="flex gap-4 mt-4">
-            <a href="https://twitter.com" target="_blank" className="hover:text-blue-400 transition text-2xl glow-icon">
+          <div className="flex gap-2 sm:gap-4 mt-2 sm:mt-4 justify-center md:justify-start">
+            <a href="https://twitter.com" target="_blank" className="hover:text-blue-400 transition text-xl sm:text-2xl glow-icon">
               <FaTwitter />
             </a>
-            <a href="https://instagram.com" target="_blank" className="hover:text-pink-500 transition text-2xl glow-icon">
+            <a href="https://instagram.com" target="_blank" className="hover:text-pink-500 transition text-xl sm:text-2xl glow-icon">
               <FaInstagram />
             </a>
-            <a href="https://github.com" target="_blank" className="hover:text-gray-300 transition text-2xl glow-icon">
+            <a href="https://github.com" target="_blank" className="hover:text-gray-300 transition text-xl sm:text-2xl glow-icon">
               <FaGithub />
             </a>
-            <a href="https://linkedin.com" target="_blank" className="hover:text-blue-600 transition text-2xl glow-icon">
+            <a href="https://linkedin.com" target="_blank" className="hover:text-blue-600 transition text-xl sm:text-2xl glow-icon">
               <FaLinkedin />
             </a>
           </div>
         </div>
       </div>
 
-      <div className="text-gray-500 text-sm text-center mt-12 relative z-10">
+      <div className="text-gray-500 text-xs sm:text-sm text-center mt-8 sm:mt-12 relative z-10">
         &copy; {new Date().getFullYear()} SpaceXplorer. All rights reserved.
       </div>
 

@@ -106,7 +106,7 @@ export default function BrowseLaunches() {
   }, [paginatedLaunches]);
 
   return (
-    <div className="relative min-h-screen bg-black text-white px-6 md:px-16 py-10 overflow-hidden">
+  <div className="relative min-h-screen bg-black text-white px-2 sm:px-6 md:px-16 py-6 md:py-10 overflow-hidden flex flex-col">
       {/* Galaxy Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 animate-galaxy bg-[radial-gradient(circle_at_20%_30%,rgba(255,0,128,0.25),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(0,128,255,0.25),transparent_50%),radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_60%)]"></div>
@@ -117,22 +117,22 @@ export default function BrowseLaunches() {
         <div className="stars stars5"></div>
       </div>
 
-      <h1 className="relative z-10 text-4xl font-bold mb-6 text-center">Explore SpaceX Launches</h1>
+  <h1 className="relative z-10 text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-center">Explore SpaceX Launches</h1>
 
       {/* Controls */}
-      <div className="relative z-10 flex flex-col md:flex-row gap-4 items-center justify-center mb-6">
+  <div className="relative z-10 flex flex-col md:flex-row gap-3 sm:gap-4 items-center justify-center mb-4 sm:mb-6 w-full">
         <input
           type="text"
           placeholder="Search by mission name"
           onChange={(e) => handleSearch(e.target.value)}
-          className="px-4 py-2 rounded-lg text-black w-full md:w-64"
+          className="px-3 py-2 rounded-lg text-black w-full sm:w-64 text-sm sm:text-base"
         />
         <input
           type="number"
           placeholder="Filter by year"
           value={yearFilter}
           onChange={(e) => setYearFilter(e.target.value)}
-          className="px-4 py-2 rounded-lg text-black w-full md:w-32"
+          className="px-3 py-2 rounded-lg text-black w-full sm:w-32 text-sm sm:text-base"
         />
         <label className="flex items-center gap-2 cursor-pointer">
           <input type="checkbox" checked={showSuccess} onChange={() => setShowSuccess(!showSuccess)} />
@@ -149,7 +149,7 @@ export default function BrowseLaunches() {
           <button
             onClick={() => setStarted(true)}
             disabled={loading || error}
-            className="px-6 py-3 rounded-lg bg-blue-600 hover:bg-blue-500 transition text-white font-semibold text-lg disabled:opacity-50"
+            className="px-4 py-2 sm:px-6 sm:py-3 rounded-lg bg-blue-600 hover:bg-blue-500 transition text-white font-semibold text-base sm:text-lg disabled:opacity-50"
           >
             {loading ? "Loading..." : "Click Me to Start Exploring!"}
           </button>
@@ -158,11 +158,11 @@ export default function BrowseLaunches() {
         <>
           {/* Launches List */}
           {error ? (
-            <div className="text-red-500 text-center mt-10">{error}</div>
+            <div className="text-red-500 text-center mt-6 sm:mt-10">{error}</div>
           ) : (launches.length === 0) ? (
-            <div className="text-gray-400 text-center mt-10">No launches available yet.</div>
+            <div className="text-gray-400 text-center mt-6 sm:mt-10">No launches available yet.</div>
           ) : (
-            <div className="relative z-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {paginatedLaunches.map((launch, idx) => (
                 <LaunchCard
                   key={launch.id}
@@ -178,32 +178,32 @@ export default function BrowseLaunches() {
           )}
 
           {/* Pagination */}
-          <div className="relative z-10 flex flex-col md:flex-row justify-center gap-3 mt-6 items-center">
-            <div className="flex gap-3">
-              <button onClick={() => setPage(1)} className="px-6 py-2 bg-green-600 rounded text-white hover:bg-green-500 transition font-semibold">First Page</button>
-              <button onClick={() => setPage(prev => Math.max(prev - 1, 1))} className="px-6 py-2 bg-gray-700 rounded text-white hover:bg-gray-600 transition" disabled={page === 1}>Prev</button>
-              <button onClick={() => setPage(prev => Math.min(prev + 1, totalPages))} className="px-6 py-2 bg-gray-700 rounded text-white hover:bg-gray-600 transition" disabled={page === totalPages}>Next</button>
+          <div className="relative z-10 flex flex-col md:flex-row justify-center gap-2 sm:gap-3 mt-4 sm:mt-6 items-center w-full">
+            <div className="flex gap-2 sm:gap-3">
+              <button onClick={() => setPage(1)} className="px-4 py-2 sm:px-6 bg-green-600 rounded text-white hover:bg-green-500 transition font-semibold text-sm sm:text-base">First Page</button>
+              <button onClick={() => setPage(prev => Math.max(prev - 1, 1))} className="px-4 py-2 sm:px-6 bg-gray-700 rounded text-white hover:bg-gray-600 transition text-sm sm:text-base" disabled={page === 1}>Prev</button>
+              <button onClick={() => setPage(prev => Math.min(prev + 1, totalPages))} className="px-4 py-2 sm:px-6 bg-gray-700 rounded text-white hover:bg-gray-600 transition text-sm sm:text-base" disabled={page === totalPages}>Next</button>
             </div>
-            <p className="text-gray-300 mt-2 md:mt-0">Page {page} of {totalPages}</p>
+            <p className="text-gray-300 mt-2 md:mt-0 text-sm sm:text-base">Page {page} of {totalPages}</p>
           </div>
         </>
       )}
 
       {/* Modal */}
       {selectedLaunch && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 px-4">
-          <div className="bg-gray-900 rounded-xl max-w-3xl w-full p-6 relative overflow-y-auto max-h-[90vh] animate-slide-in-modal">
-            <button onClick={() => setSelectedLaunch(null)} className="absolute top-4 right-4 text-white text-xl font-bold">✕</button>
-            <h2 className="text-3xl font-bold mb-4">{selectedLaunch.name} | {rockets[selectedLaunch.rocket] || selectedLaunch.rocket}</h2>
+        <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 px-2 sm:px-4">
+          <div className="bg-gray-900 rounded-xl max-w-lg sm:max-w-2xl md:max-w-3xl w-full p-4 sm:p-6 relative overflow-y-auto max-h-[90vh] animate-slide-in-modal">
+            <button onClick={() => setSelectedLaunch(null)} className="absolute top-2 sm:top-4 right-2 sm:right-4 text-white text-lg sm:text-xl font-bold">✕</button>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-4">{selectedLaunch.name} | {rockets[selectedLaunch.rocket] || selectedLaunch.rocket}</h2>
             {selectedLaunch.links?.patch?.small && (
-              <img src={selectedLaunch.links.patch.small} alt="Mission Patch" className="w-32 h-32 object-contain mb-4" />
+              <img src={selectedLaunch.links.patch.small} alt="Mission Patch" className="w-20 h-20 sm:w-32 sm:h-32 object-contain mb-2 sm:mb-4 mx-auto" />
             )}
-            <p className="text-gray-300 mb-2">{selectedLaunch.details}</p>
-            <p className="text-gray-300 mb-2">Rocket: {rockets[selectedLaunch.rocket] || selectedLaunch.rocket}</p>
-            <div className="flex flex-wrap gap-4 mt-4">
-              {selectedLaunch.links?.wikipedia && <a href={selectedLaunch.links.wikipedia} target="_blank" className="text-blue-400 hover:underline">Wikipedia</a>}
-              {selectedLaunch.links?.webcast && <a href={selectedLaunch.links.webcast} target="_blank" className="text-blue-400 hover:underline">Webcast</a>}
-              {selectedLaunch.links?.article && <a href={selectedLaunch.links.article} target="_blank" className="text-blue-400 hover:underline">Article</a>}
+            <p className="text-gray-300 mb-1 sm:mb-2 text-sm sm:text-base">{selectedLaunch.details}</p>
+            <p className="text-gray-300 mb-1 sm:mb-2 text-sm sm:text-base">Rocket: {rockets[selectedLaunch.rocket] || selectedLaunch.rocket}</p>
+            <div className="flex flex-wrap gap-2 sm:gap-4 mt-2 sm:mt-4">
+              {selectedLaunch.links?.wikipedia && <a href={selectedLaunch.links.wikipedia} target="_blank" className="text-blue-400 hover:underline text-sm sm:text-base">Wikipedia</a>}
+              {selectedLaunch.links?.webcast && <a href={selectedLaunch.links.webcast} target="_blank" className="text-blue-400 hover:underline text-sm sm:text-base">Webcast</a>}
+              {selectedLaunch.links?.article && <a href={selectedLaunch.links.article} target="_blank" className="text-blue-400 hover:underline text-sm sm:text-base">Article</a>}
             </div>
           </div>
         </div>
@@ -215,6 +215,12 @@ export default function BrowseLaunches() {
         [class*="slide-delay-0"] { transition-delay: 0.1s; }
         [class*="slide-delay-1"] { transition-delay: 0.2s; }
         [class*="slide-delay-2"] { transition-delay: 0.3s; }
+
+        @media (max-width: 768px) {
+          .md\:flex-row { flex-direction: column !important; }
+          .md\:px-16 { padding-left: 1rem !important; padding-right: 1rem !important; }
+          .md\:py-10 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+        }
 
         @keyframes slideInModal { 0% { opacity: 0; transform: translateY(-40px); } 100% { opacity:1; transform: translateY(0); } }
         .animate-slide-in-modal { animation: slideInModal 0.5s ease-out forwards; }

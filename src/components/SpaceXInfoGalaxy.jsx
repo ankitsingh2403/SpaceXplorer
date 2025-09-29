@@ -26,7 +26,7 @@ export default function SpaceXInfoGalaxy() {
   }, [infoRefs]);
 
   return (
-    <div className="relative w-full bg-black text-white overflow-hidden">
+  <div className="relative w-full bg-black text-white overflow-hidden min-h-screen">
 
       {/* Galaxy & Stars Background */}
       <div className="fixed inset-0 z-0">
@@ -39,7 +39,7 @@ export default function SpaceXInfoGalaxy() {
       </div>
 
       {/* === First Section: Image Left, Info Right === */}
-      <section className="relative w-full flex flex-col md:flex-row items-center px-6 md:px-16 py-20 gap-12 z-10">
+      <section className="relative w-full flex flex-col md:flex-row items-center px-2 sm:px-6 md:px-16 py-10 sm:py-16 md:py-20 gap-6 sm:gap-12 z-10">
         <div className="w-full md:w-1/3">
           <img
             src={spacexImg1}
@@ -50,21 +50,21 @@ export default function SpaceXInfoGalaxy() {
 
         <div
           ref={infoRefs[0]}
-          className="w-full md:w-2/3 opacity-0 transform translate-x-12 transition-all duration-700 space-y-4"
+          className="w-full md:w-2/3 opacity-0 transform translate-x-8 sm:translate-x-12 transition-all duration-700 space-y-2 sm:space-y-4"
           data-direction="right"
         >
-          <h2 className="text-4xl font-bold mb-4">SpaceX Missions & Launches</h2>
-          <p className="text-gray-300 text-lg">
+          <h2 className="text-xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">SpaceX Missions & Launches</h2>
+          <p className="text-gray-300 text-sm sm:text-base md:text-lg">
             SpaceX has conducted numerous launches since its first Falcon 1 mission in 2006. Key milestones include the first privately-funded spacecraft to reach orbit, the first commercial spacecraft to dock with the International Space Station (Dragon in 2012), and the development of reusable Falcon 9 rockets that land vertically after launch.
           </p>
-          <p className="text-gray-300 text-lg">
+          <p className="text-gray-300 text-sm sm:text-base md:text-lg">
             The Falcon Heavy, SpaceX's super heavy-lift launch vehicle, successfully carried payloads to orbit in 2018, including the famous Tesla Roadster. The company continues to conduct Starlink satellite launches, deploying constellations to provide global broadband internet.
           </p>
         </div>
       </section>
 
       {/* === Second Section: Image Right, Info Left === */}
-      <section className="relative w-full flex flex-col md:flex-row-reverse items-center px-6 md:px-16 py-20 gap-12 z-10">
+      <section className="relative w-full flex flex-col md:flex-row-reverse items-center px-2 sm:px-6 md:px-16 py-10 sm:py-16 md:py-20 gap-6 sm:gap-12 z-10">
         <div className="w-full md:w-1/3">
           <img
             src={spacexImg2}
@@ -75,7 +75,7 @@ export default function SpaceXInfoGalaxy() {
 
         <div
           ref={infoRefs[1]}
-          className="w-full md:w-2/3 opacity-0 transform -translate-x-12 transition-all duration-700 space-y-4"
+          className="w-full md:w-2/3 opacity-0 transform -translate-x-8 sm:-translate-x-12 transition-all duration-700 space-y-2 sm:space-y-4"
           data-direction="left"
         >
           <h2 className="text-4xl font-bold mb-4">Recent SpaceX Launch Highlights</h2>

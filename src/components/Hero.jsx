@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black flex items-center justify-between px-16">
+    <section className="relative w-full min-h-screen overflow-hidden bg-black flex flex-col md:flex-row items-center justify-between px-4 sm:px-8 md:px-16 py-8 md:py-0">
       {/* Galaxy & Stars Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 animate-galaxy bg-[radial-gradient(circle_at_20%_30%,rgba(255,0,128,0.25),transparent_40%),radial-gradient(circle_at_80%_70%,rgba(0,128,255,0.25),transparent_50%),radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_60%)]"></div>
@@ -35,29 +35,28 @@ export default function Hero() {
       </div>
 
       {/* Left Content */}
-      <div className="relative z-20 max-w-xl space-y-6 text-white">
-        <h1 className="text-6xl md:text-7xl font-extrabold leading-tight tracking-tight">
+      <div className="relative z-20 max-w-xl w-full space-y-4 sm:space-y-6 text-white flex flex-col items-start md:items-start md:justify-center py-4 md:py-0">
+        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
           Embark on a{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-400 animate-pulse">
             Cosmic Journey
           </span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-300">
+        <p className="text-base sm:text-lg md:text-xl text-gray-300">
           Navigate through the{" "}
           <span className="text-red-400 font-semibold">infinite universe</span>{" "}
           of possibilities. Connect, innovate, and shine beyond the stars. 🚀
         </p>
         <Link to="/browse-launches">
-          <button className=" mt-6 px-8 py-4 bg-white text-black font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition transform hover:scale-105">
+          <button className="mt-4 sm:mt-6 px-4 py-2 sm:px-8 sm:py-4 bg-white text-black font-semibold rounded-lg shadow-lg hover:bg-gray-200 transition transform hover:scale-105 text-sm sm:text-base md:text-lg">
             Explore Now
           </button>
         </Link>
       </div>
 
       {/* Right Side - Ribbon + Card */}
-      <div className="relative flex flex-col items-center justify-center h-full z-20 mr-32">
-        {/* Shared Swing Wrapper */}
-        <div className="swing-wrapper relative flex flex-col items-center w-72 perspective">
+      <div className="relative flex flex-col items-center justify-center h-auto md:h-full z-20 md:mr-32 mt-8 md:mt-0 w-full md:w-auto">
+        <div className="swing-wrapper relative flex flex-col items-center w-64 sm:w-72 perspective">
           {/* Ribbon tied through card */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-64 z-10 flex flex-col items-center">
             <div className="relative w-full h-6">
@@ -70,7 +69,7 @@ export default function Hero() {
           </div>
 
           {/* Card */}
-          <div className="relative top-16 card-container w-full h-[22rem] transform-style cursor-pointer">
+          <div className="relative top-12 sm:top-16 card-container w-full h-[18rem] sm:h-[22rem] transform-style cursor-pointer">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-12 h-4 bg-black rounded-sm z-30 shadow-inner"></div>
 
             {/* Card Inner for flipping */}
@@ -81,6 +80,7 @@ export default function Hero() {
                   src={idFront}
                   alt="ID Front"
                   className="w-full h-full object-cover"
+                  draggable="false"
                 />
                 <div className="absolute bottom-4 left-0 w-full text-center text-black font-bold text-2xl">
                   SpaceXplorer
@@ -93,6 +93,7 @@ export default function Hero() {
                   src={idBack}
                   alt="ID Back"
                   className="w-full h-full object-cover"
+                  draggable="false"
                 />
                 <div className="absolute bottom-4 left-0 w-full text-center text-black font-bold text-2xl">
                   SpaceXplorer
@@ -118,6 +119,13 @@ export default function Hero() {
           .backface-hidden { backface-visibility: hidden; }
           .rotate-y-180 { transform: rotateY(180deg); }
           .transition-transform { transition: transform 0.7s; }
+
+          @media (max-width: 768px) {
+            .md\:flex-row { flex-direction: column !important; }
+            .md\:mr-32 { margin-right: 0 !important; }
+            .md\:items-start { align-items: center !important; }
+            .md\:py-0 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+          }
 
           /* Galaxy */
           @keyframes galaxyMove { 0% { transform: scale(1) translate(0,0); } 100% { transform: scale(1.2) translate(-40px,40px); } }
