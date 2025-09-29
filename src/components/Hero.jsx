@@ -36,7 +36,7 @@ export default function Hero() {
 
       {/* Left Content */}
       <div className="relative z-20 max-w-xl w-full space-y-4 sm:space-y-6 text-white flex flex-col items-start md:items-start md:justify-center py-4 md:py-0">
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        <h1 className=" pt-6 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
           Embark on a{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-blue-400 animate-pulse">
             Cosmic Journey
@@ -75,7 +75,7 @@ export default function Hero() {
             {/* Card Inner for flipping */}
             <div className="card-inner w-full h-full absolute transform-style transition-transform duration-700 hover:rotate-y-180">
               {/* Front Side */}
-              <div className="absolute inset-0 backface-hidden rounded-xl shadow-2xl overflow-hidden">
+              <div className=" pb-4 absolute inset-0 backface-hidden rounded-xl shadow-2xl overflow-hidden">
                 <img
                   src={idFront}
                   alt="ID Front"

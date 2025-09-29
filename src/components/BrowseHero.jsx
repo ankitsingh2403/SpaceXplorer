@@ -36,7 +36,7 @@ export default function BrowseHero() {
 
       {/* Left Content */}
       <div className="relative z-20 max-w-xl w-full space-y-4 sm:space-y-6 text-white flex flex-col items-start md:items-start md:justify-center py-4 md:py-0">
-        <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        <h1 className="pt-7 text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight">
           Explore <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 animate-pulse">SpaceX Launches</span>
         </h1>
         <p className="text-base sm:text-lg md:text-xl text-gray-300">
@@ -67,7 +67,7 @@ export default function BrowseHero() {
 
             <div className="card-inner w-full h-full absolute transform-style transition-transform duration-700 hover:rotate-y-180">
               {/* Front */}
-              <div className="absolute inset-0 backface-hidden rounded-xl shadow-2xl overflow-hidden">
+              <div className="pb-7 absolute inset-0 backface-hidden rounded-xl shadow-2xl overflow-hidden">
                 <img src={cardFront} alt="Launch Front" className="w-full h-full object-cover" draggable="false" />
                 <div className="absolute bottom-4 left-0 w-full text-center text-black font-bold text-2xl">
                   Latest Launch

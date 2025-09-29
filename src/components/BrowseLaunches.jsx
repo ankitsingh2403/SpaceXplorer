@@ -117,7 +117,7 @@ export default function BrowseLaunches() {
         <div className="stars stars5"></div>
       </div>
 
-  <h1 className="relative z-10 text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-center">Explore SpaceX Launches</h1>
+  <h1 className="pt-12 relative z-10 text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-center">Explore SpaceX Launches</h1>
 
       {/* Controls */}
   <div className="relative z-10 flex flex-col md:flex-row gap-3 sm:gap-4 items-center justify-center mb-4 sm:mb-6 w-full">
